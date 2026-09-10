@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Everly's 5th Birthday Rescue Mission</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ FRONT COVER ============ -->
+<div class="cover" id="coverPage" role="button" tabindex="0" aria-label="Tap to open your invitation">
+  <div class="cover-eyebrow">🐾 Top secret pup mail</div>
+ <img class="cover-logo" src="/kids-birthday/Images/pups-removebg-preview.png" alt="Paw Patrol logo" width="200" height="auto">
+  <svg class="cover-badge" viewBox="0 0 200 200" width="100%" height="100%">
+    <defs>
+      <filter id="coverBadgeShadow" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0b3a55" flood-opacity="0.35"/>
+      </filter>
+    </defs>
+    <g filter="url(#coverBadgeShadow)">
+      <polygon points="100,6 190,55 190,120 100,196 10,120 10,55" fill="#FFC93C" stroke="#146FA6" stroke-width="6"/>
+      <polygon points="100,20 178,62 178,116 100,180 22,116 22,62" fill="#E8434B"/>
+      <circle cx="100" cy="98" r="52" fill="#FFF8EC"/>
+    </g>
+    <text x="100" y="122" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-size="82" font-weight="800" fill="#146FA6">5</text>
+  </svg>
+
+  <h1>You have a pup-tastic invitation!</h1>
+  <p class="cover-sub">Tap the badge to open your mission briefing.</p>
+
+  <span class="cover-tap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg>
+    Open invitation
+  </span>
+</div>
+
+<div id="mainContent">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="paw" style="top:12%; left:8%; --rot:-18deg;">
+    <svg viewBox="0 0 64 64" fill="#fff"><ellipse cx="32" cy="42" rx="16" ry="13"/><ellipse cx="14" cy="20" rx="7" ry="9"/><ellipse cx="50" cy="20" rx="7" ry="9"/><ellipse cx="24" cy="10" rx="6" ry="8"/><ellipse cx="40" cy="10" rx="6" ry="8"/></svg>
+  </div>
+  <div class="paw" style="top:70%; left:12%; --rot:12deg; animation-delay:0.2s;">
+    <svg viewBox="0 0 64 64" fill="#fff"><ellipse cx="32" cy="42" rx="16" ry="13"/><ellipse cx="14" cy="20" rx="7" ry="9"/><ellipse cx="50" cy="20" rx="7" ry="9"/><ellipse cx="24" cy="10" rx="6" ry="8"/><ellipse cx="40" cy="10" rx="6" ry="8"/></svg>
+  </div>
+  <div class="paw" style="top:18%; right:9%; --rot:22deg; animation-delay:0.4s;">
+    <svg viewBox="0 0 64 64" fill="#fff"><ellipse cx="32" cy="42" rx="16" ry="13"/><ellipse cx="14" cy="20" rx="7" ry="9"/><ellipse cx="50" cy="20" rx="7" ry="9"/><ellipse cx="24" cy="10" rx="6" ry="8"/><ellipse cx="40" cy="10" rx="6" ry="8"/></svg>
+  </div>
+  <div class="paw" style="top:65%; right:10%; --rot:-10deg; animation-delay:0.6s;">
+    <svg viewBox="0 0 64 64" fill="#fff"><ellipse cx="32" cy="42" rx="16" ry="13"/><ellipse cx="14" cy="20" rx="7" ry="9"/><ellipse cx="50" cy="20" rx="7" ry="9"/><ellipse cx="24" cy="10" rx="6" ry="8"/><ellipse cx="40" cy="10" rx="6" ry="8"/></svg>
+  </div>
+
+  <div class="hero-eyebrow">🐾 Urgent mission briefing</div>
+
+  <div class="badge">
+    <svg viewBox="0 0 200 200" width="100%" height="100%">
+      <defs>
+        <filter id="badgeShadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0b3a55" flood-opacity="0.35"/>
+        </filter>
+      </defs>
+      <g filter="url(#badgeShadow)">
+        <polygon points="100,6 190,55 190,120 100,196 10,120 10,55" fill="#FFC93C" stroke="#146FA6" stroke-width="6"/>
+        <polygon points="100,20 178,62 178,116 100,180 22,116 22,62" fill="#E8434B"/>
+        <circle cx="100" cy="98" r="52" fill="#FFF8EC"/>
+      </g>
+      <text x="100" y="122" text-anchor="middle" font-family="'Baloo 2', sans-serif" font-size="82" font-weight="800" fill="#146FA6">5</text>
+    </svg>
+  </div>
+
+  <h1>You're on the team,<br><span class="name">little pup!</span></h1>
+  <p class="tagline">Join us as we celebrate <strong id="nameInline">Khayalethu</strong> turning 5 — no job too big, no pup too small!</p>
+
+  <a href="#details" class="scroll-cue" aria-label="Scroll to mission details">
+    Mission details
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
+</section>
+
+<div class="wrap">
+
+  <!-- ============ DETAILS ============ -->
+  <section id="details">
+    <div class="section-head">
+      <span class="kicker">Countdown to launch</span>
+      <h2>The mission begins in…</h2>
+    </div>
+
+    <div class="countdown" id="countdown">
+      <div class="unit"><span class="num" id="cd-days">--</span><span class="lbl">Days</span></div>
+      <div class="unit"><span class="num" id="cd-hours">--</span><span class="lbl">Hours</span></div>
+      <div class="unit"><span class="num" id="cd-mins">--</span><span class="lbl">Mins</span></div>
+      <div class="unit"><span class="num" id="cd-secs">--</span><span class="lbl">Secs</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="cards">
+      <div class="card date">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></div>
+        <h3>Saturday, Dec 12</h3>
+        <p>2026 — mark your calendars, pup!</p>
+      </div>
+      <div class="card time">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>11:00 AM – 2:00 PM</h3>
+        <p>Arrive on time — the mission won't wait!</p>
+      </div>
+      <div class="card place">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <h3>Pawville Park Pavilion</h3>
+        <p>123 Bark Avenue, Springfield</p>
+      </div>
+      <div class="card dress">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3l3 2 3-2 3 3-2 3v10a1 1 0 01-1 1H8a1 1 0 01-1-1V9L5 6l3-3z"/></svg></div>
+        <h3>Rescue gear encouraged</h3>
+        <p>Wear your favorite pup colors!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MISSION LIST ============ -->
+  <section>
+    <div class="missions">
+      <h2>Day's rescue missions</h2>
+      <ul class="mission-list">
+        <li>
+          <svg class="paw-icon" viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="42" rx="16" ry="13"/><ellipse cx="14" cy="20" rx="7" ry="9"/><ellipse cx="50" cy="20" rx="7" ry="9"/><ellipse cx="24" cy="10" rx="6" ry="8"/><ellipse cx="40" cy="10" rx="6" ry="8"/></svg>
+          Pin-the-badge-on-the-pup
+        </li>
+        <li>
+          <svg class="paw-icon" viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="42" rx="16" ry="13"/><ellipse cx="14" cy="20" rx="7" ry="9"/><ellipse cx="50" cy="20" rx="7" ry="9"/><ellipse cx="24" cy="10" rx="6" ry="8"/><ellipse cx="40" cy="10" rx="6" ry="8"/></svg>
+          Obstacle course training
+        </li>
+        <li>
+          <svg class="paw-icon" viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="42" rx="16" ry="13"/><ellipse cx="14" cy="20" rx="7" ry="9"/><ellipse cx="50" cy="20" rx="7" ry="9"/><ellipse cx="24" cy="10" rx="6" ry="8"/><ellipse cx="40" cy="10" rx="6" ry="8"/></svg>
+          Rescue-vehicle craft station
+        </li>
+        <li>
+          <svg class="paw-icon" viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="42" rx="16" ry="13"/><ellipse cx="14" cy="20" rx="7" ry="9"/><ellipse cx="50" cy="20" rx="7" ry="9"/><ellipse cx="24" cy="10" rx="6" ry="8"/><ellipse cx="40" cy="10" rx="6" ry="8"/></svg>
+          Cake & treats at 1:00 PM
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ RSVP ============ -->
+  <section class="rsvp">
+    <div class="rsvp-card">
+      <h2>Ready for duty?</h2>
+      <p>Let us know if you can join the squad by September 1st — every pup's spot counts!</p>
+      <button type="button" class="btn" id="openRsvp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 6l8 6 8-6M4 6h16v12H4z"/></svg>
+        RSVP now
+      </button>
+      <p class="rsvp-note">Or text Mom & Dad Rescue Squad at (061) 010-1234</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  Made with by The Occational Edit, for the best pup-in-training turning 5.
+</footer>
+
+<!-- ============ RSVP MODAL ============ -->
+<div class="modal-overlay" id="rsvpOverlay" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
+  <div class="modal">
+    <button type="button" class="modal-close" id="closeRsvp" aria-label="Close RSVP form">✕</button>
+
+    <form id="rsvpForm">
+      <h2 id="rsvpTitle">Report for duty</h2>
+      <p class="modal-sub">Fill in your mission details below.</p>
+
+      <div class="field">
+        <label for="guestName">Pup's name (yours!)</label>
+        <input type="text" id="guestName" name="guestName" placeholder="e.g. Jordan Smith" required>
+      </div>
+
+      <div class="field">
+        <label>Will you join the mission?</label>
+        <div class="attend-toggle">
+          <input type="radio" id="attendYes" name="attending" value="Yes" checked>
+          <label for="attendYes">🐾 Yes, I'm in!</label>
+          <input type="radio" id="attendNo" name="attending" value="No">
+          <label for="attendNo">Can't make it</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="guestCount">Number attending (incl. you)</label>
+        <input type="number" id="guestCount" name="guestCount" min="1" max="20" value="1">
+      </div>
+
+      <div class="field">
+        <label for="guestNotes">Allergies or notes for the squad leader</label>
+        <textarea id="guestNotes" name="guestNotes" placeholder="Optional — allergies, questions, etc."></textarea>
+      </div>
+
+      <button type="submit" class="btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+        Send RSVP
+      </button>
+    </form>
+
+    <div class="modal-success" id="rsvpSuccess" hidden>
+      <svg class="badge-mini" viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="42" rx="16" ry="13"/><ellipse cx="14" cy="20" rx="7" ry="9"/><ellipse cx="50" cy="20" rx="7" ry="9"/><ellipse cx="24" cy="10" rx="6" ry="8"/><ellipse cx="40" cy="10" rx="6" ry="8"/></svg>
+      <h2>RSVP sent!</h2>
+      <p id="rsvpSuccessMsg">Thanks for letting us know — see you at the party!</p>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  const partyDateTime = new Date("2026-12-12T11:00:00");
+
+  function updateCountdown(){
+    const now = new Date();
+    let diff = partyDateTime - now;
+    const els = {
+      d: document.getElementById('cd-days'),
+      h: document.getElementById('cd-hours'),
+      m: document.getElementById('cd-mins'),
+      s: document.getElementById('cd-secs')
+    };
+    if (diff <= 0) {
+      els.d.textContent = '0'; els.h.textContent = '0';
+      els.m.textContent = '0'; els.s.textContent = '0';
+      document.querySelector('.countdown').insertAdjacentHTML('afterend',
+        '<p style="text-align:center;font-weight:800;color:#E8434B;margin-top:6px;">The mission is underway! 🎉</p>');
+      clearInterval(timer);
+      return;
+    }
+    const day = Math.floor(diff / (1000*60*60*24));
+    diff -= day * (1000*60*60*24);
+    const hr = Math.floor(diff / (1000*60*60));
+    diff -= hr * (1000*60*60);
+    const min = Math.floor(diff / (1000*60));
+    diff -= min * (1000*60);
+    const sec = Math.floor(diff / 1000);
+
+    els.d.textContent = day;
+    els.h.textContent = hr;
+    els.m.textContent = min;
+    els.s.textContent = sec;
+  }
+  updateCountdown();
+  const timer = setInterval(updateCountdown, 1000);
+
+ 
+  const rsvpEmail = "rsvp@example.com";
+
+  const overlay = document.getElementById('rsvpOverlay');
+  const openBtn = document.getElementById('openRsvp');
+  const closeBtn = document.getElementById('closeRsvp');
+  const form = document.getElementById('rsvpForm');
+  const successView = document.getElementById('rsvpSuccess');
+  const successMsg = document.getElementById('rsvpSuccessMsg');
+
+  function openModal(){
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    form.hidden = false;
+    successView.hidden = true;
+    form.reset();
+    document.getElementById('guestName').focus();
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const name = document.getElementById('guestName').value.trim();
+    const attending = form.querySelector('input[name="attending"]:checked').value;
+    const count = document.getElementById('guestCount').value;
+    const notes = document.getElementById('guestNotes').value.trim();
+
+   
+    const subject = encodeURIComponent(`RSVP: ${name} — ${attending === 'Yes' ? 'Attending' : 'Not attending'}`);
+    const bodyLines = [
+      `Name: ${name}`,
+      `Attending: ${attending}`,
+      `Number attending: ${count}`,
+      `Notes: ${notes || '—'}`
+    ];
+    const body = encodeURIComponent(bodyLines.join('\n'));
+    const mailtoLink = `mailto:${rsvpEmail}?subject=${subject}&body=${body}`;
+
+    window.location.href = mailtoLink;
+
+    successMsg.textContent = attending === 'Yes'
+      ? `Thanks, ${name.split(' ')[0] || 'pup'} — we've noted you're joining the squad!`
+      : `Thanks for letting us know, ${name.split(' ')[0] || 'friend'} — you'll be missed!`;
+    form.hidden = true;
+    successView.hidden = false;
+  });
+
+  
+  
+  const coverPage = document.getElementById('coverPage');
+  const mainContent = document.getElementById('mainContent');
+
+  document.documentElement.classList.add('locked');
+
+  function openInvitation(){
+    if (coverPage.classList.contains('closing')) return;
+    coverPage.classList.add('closing');
+    mainContent.classList.add('revealed');
+    document.documentElement.classList.remove('locked');
+    setTimeout(() => { coverPage.hidden = true; }, 750);
+  }
+
+  coverPage.addEventListener('click', openInvitation);
+  coverPage.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openInvitation();
+    }
+  });
+</script>
+
+</div><!-- /#mainContent -->
+
+</body>
+</html>
