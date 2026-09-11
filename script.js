@@ -1,6 +1,4 @@
-
- 
-  const partyDateTime = new Date("2026-09-12T11:00:00");
+ const partyDateTime = new Date("2026-12-12T11:00:00");
 
   function updateCountdown(){
     const now = new Date();
@@ -34,47 +32,82 @@
   }
   updateCountdown();
   const timer = setInterval(updateCountdown, 1000);
+
+ 
+  const rsvpEmail = "rsvp@example.com";
+
+  const overlay = document.getElementById('rsvpOverlay');
+  const openBtn = document.getElementById('openRsvp');
+  const closeBtn = document.getElementById('closeRsvp');
+  const form = document.getElementById('rsvpForm');
+  const successView = document.getElementById('rsvpSuccess');
+  const successMsg = document.getElementById('rsvpSuccessMsg');
+
+  function openModal(){
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    form.hidden = false;
+    successView.hidden = true;
+    form.reset();
+    document.getElementById('guestName').focus();
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const name = document.getElementById('guestName').value.trim();
+    const attending = form.querySelector('input[name="attending"]:checked').value;
+    const count = document.getElementById('guestCount').value;
+    const notes = document.getElementById('guestNotes').value.trim();
+
+   
+    const subject = encodeURIComponent(`RSVP: ${name} — ${attending === 'Yes' ? 'Attending' : 'Not attending'}`);
+    const bodyLines = [
+      `Name: ${name}`,
+      `Attending: ${attending}`,
+      `Number attending: ${count}`,
+      `Notes: ${notes || '—'}`
+    ];
+    const body = encodeURIComponent(bodyLines.join('\n'));
+    const mailtoLink = `mailto:${rsvpEmail}?subject=${subject}&body=${body}`;
+
+    window.location.href = mailtoLink;
+
+    successMsg.textContent = attending === 'Yes'
+      ? `Thanks, ${name.split(' ')[0] || 'pup'} — we've noted you're joining the squad!`
+      : `Thanks for letting us know, ${name.split(' ')[0] || 'friend'} — you'll be missed!`;
+    form.hidden = true;
+    successView.hidden = false;
+  });
+
   
- async function submitRSVP() {
-  console.log("Button clicked!");
-    const fname = document.getElementById('fname').value.trim();
-    const lname = document.getElementById('lname').value.trim();
-    const email = document.getElementById('email').value.trim();
+  
+  const coverPage = document.getElementById('coverPage');
+  const mainContent = document.getElementById('mainContent');
 
-    if (!fname || !lname || !email) {
-        alert('Please fill in your name and email before sending.');
-        return;
+  document.documentElement.classList.add('locked');
+
+  function openInvitation(){
+    if (coverPage.classList.contains('closing')) return;
+    coverPage.classList.add('closing');
+    mainContent.classList.add('revealed');
+    document.documentElement.classList.remove('locked');
+    setTimeout(() => { coverPage.hidden = true; }, 750);
+  }
+
+  coverPage.addEventListener('click', openInvitation);
+  coverPage.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openInvitation();
     }
-
-    if (attending === "") {
-        alert("Please let us know whether you'll be attending.");
-        return;
-    }
-    
-
-    const formData = new FormData();
-formData.append("fname", fname);
-formData.append("lname", lname);
-formData.append("email", email);
-formData.append("attending", attending);
-
-try{
-const response = await fetch("https://script.google.com/macros/s/AKfycbxw6HjbV_8Al_PmSQ1Ug0A9EKITYhd3F_HcDIGqfN7PtWIo5bM2w87CnqaXsElpH2lvYQ/exec", {
-    method: "POST",
-    body: formData
-});
-
-        const result = await response.json();
-
-        if (result.success) {
-            document.getElementById('rsvpForm').style.display = 'none';
-            document.getElementById('successMsg').style.display = 'block';
-        } else {
-            alert(result.error);
-            
-        }
-    } catch (error) {
-        console.error(error);
-        alert("Something went wrong." + error.message);
-    }
-}
+  });
